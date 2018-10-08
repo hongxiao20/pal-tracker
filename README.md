@@ -1,2 +1,0 @@
-# pal-tracker
-pal-tracker
