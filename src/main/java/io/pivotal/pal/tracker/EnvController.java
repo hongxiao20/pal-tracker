@@ -15,6 +15,7 @@ public class EnvController {
     private final String cfInstanceIndex;
     private final String cfInstanceAddress;
 
+    //constructor
     public EnvController (@Value("${PORT:NOT SET}") String port, @Value("${MEMORY_LIMIT:512 MB}") String memoryLimit,
                         @Value("${CF_INSTANCE_INDEX:NOT SET}") String cfInstanceIndex, @Value("${CF_INSTANCE_ADDR:NOT SET}") String cfInstanceAddress)
 
