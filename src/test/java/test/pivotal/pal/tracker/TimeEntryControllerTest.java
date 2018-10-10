@@ -50,7 +50,7 @@ public class TimeEntryControllerTest {
         doReturn(expected)
             .when(timeEntryRepository)
             .find(1L);
-
+        
         ResponseEntity<TimeEntry> response = controller.read(1L);
 
         verify(timeEntryRepository).find(1L);

@@ -1,10 +1,12 @@
 package io.pivotal.pal.tracker;
 
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Repository;
 
 import java.sql.Time;
 import java.util.List;
 
+@Repository
 public interface TimeEntryRepository {
 
     public TimeEntry create(TimeEntry timeEntry);
