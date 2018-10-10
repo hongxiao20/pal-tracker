@@ -9,6 +9,7 @@ public class WelcomeController {
 
     private final String greeting;
 
+    //comment
     public WelcomeController(@Value("${WELCOME_MESSAGE}") String greeting) {
         this.greeting = greeting;
     }
