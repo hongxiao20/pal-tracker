@@ -63,8 +63,11 @@ public class InMemoryTimeEntryRepository implements TimeEntryRepository{
 
     }
 
-    public void delete(long id) {
-        timeEntryHashMap.remove(id);
+    public TimeEntry delete(long id) {
+        //TimeEntry response = timeEntryHashMap.get(id);
+        TimeEntry response = timeEntryHashMap.remove(id);
+        return response;
+
 
     }
 
