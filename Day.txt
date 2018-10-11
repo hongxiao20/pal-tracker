@@ -1,0 +1,59 @@
+curl -X POST -H "Content-type: application/json" https://pal-tracker-jagv3-jenny.apps.pikes.pal.pivotal.io/time-entries -d @test.json 
+
+INSERT
+curl -X POST -H "Content-type: application/json" https://localhost:8080/time-entries -d @test.json 
+
+DELETE
+curl -X DELETE -H "Content-type: application/json" http://localhost:8080/time-entries/3 -d @test.json 
+
+
+
+test.json
+{
+  "userId": 1,
+  "projectId": 2,
+  "hours": 3,
+  "date": "2018-01-01"
+}
+
+
+pal_user@MXPX:~/workspace/pal-tracker$ mysql -uroot
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MariaDB connection id is 241
+Server version: 10.1.34-MariaDB-0ubuntu0.18.04.1 Ubuntu 18.04
+
+Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+MariaDB [(none)]> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| tracker_dev        |
+| tracker_test       |
++--------------------+
+5 rows in set (0.00 sec)
+
+MariaDB [(none)]> use tracker_test;
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+
+Database changed
+
+
+
+MariaDB [tracker_dev]> show tables
+    -> ;
++-----------------------+
+| Tables_in_tracker_dev |
++-----------------------+
+| flyway_schema_history |
+| time_entries          |
++-----------------------+
+2 rows in set (0.00 sec)
+
+
