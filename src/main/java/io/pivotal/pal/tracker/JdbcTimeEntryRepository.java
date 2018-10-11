@@ -15,6 +15,7 @@ import java.util.List;
 
 public class JdbcTimeEntryRepository implements TimeEntryRepository {
 
+
     private final JdbcTemplate jdbcTemplate;
 
     private final RowMapper<TimeEntry> mapper = (rs, rowNum) -> new TimeEntry(
@@ -31,6 +32,7 @@ public class JdbcTimeEntryRepository implements TimeEntryRepository {
     public JdbcTimeEntryRepository(DataSource dataSource) {
         this.jdbcTemplate = new JdbcTemplate(dataSource);
     }
+
 
     public TimeEntry create(TimeEntry timeEntry){
         KeyHolder generatedKeyHolder = new GeneratedKeyHolder();
