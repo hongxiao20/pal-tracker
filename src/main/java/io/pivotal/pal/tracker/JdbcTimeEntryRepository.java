@@ -72,8 +72,10 @@ public class JdbcTimeEntryRepository implements TimeEntryRepository {
         return find(id);
     }
 
-    public void delete(long id){
+    public TimeEntry delete(long id){
         jdbcTemplate.update("DELETE FROM time_entries WHERE id = ?", id);
+        TimeEntry response = find(id);
+        return response;
     }
 
 }

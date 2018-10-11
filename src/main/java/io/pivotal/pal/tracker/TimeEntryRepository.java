@@ -17,7 +17,7 @@ public interface TimeEntryRepository {
 
     public TimeEntry update(long id, TimeEntry timeEntry);
 
-    public void delete(long id);
+    public TimeEntry delete(long id);
 
 
 
